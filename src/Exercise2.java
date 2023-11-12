@@ -1,6 +1,8 @@
+package src;
+
 import java.util.Scanner;
 
-public class Exercises2 {
+public class Exercise2 {
     public static void main(String[] args) {
         task7();
     }
