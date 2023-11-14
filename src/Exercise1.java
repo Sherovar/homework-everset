@@ -1,6 +1,6 @@
 package src;
 
-public class Lesson1 {
+public class Exercise1 {
     public static void main(String[] args) {
 
     }
