@@ -5,6 +5,9 @@ public class Recursion {
     public static int[] fibArray = new int[20];
     public static void main(String[] args) {
 
+        System.out.println(recur3_1(2,-1));
+
+
     }
 
 
@@ -52,12 +55,12 @@ public class Recursion {
     public static double recur3_1(double num, int pow){
         if (pow == 0)
             return 1;
-        if(pow % 2 == 0)
-            return recur3_1(num, pow / 2) * num;
-        else if (pow % 2 == 1)
-            return recur3_1(num , pow - 1) * num;
-        else
+        if (pow < 0)
             return recur3_1(num, pow + 1) / num;
+        if(pow % 2 == 0)
+            return recur3_1(num, pow / 2) * recur3_1(num, pow / 2);
+        else
+            return recur3_1(num , pow - 1) * num;
 
     }
 
