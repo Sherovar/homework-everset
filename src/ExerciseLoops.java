@@ -2,7 +2,7 @@ package src;
 
 public class ExerciseLoops {
     public static void main(String[] args) {
-        printNumberPattern();
+        printReversePyramid();
         
     }
 
@@ -33,12 +33,12 @@ public class ExerciseLoops {
 
     public static void printPyramid(){
         char a = 'A';
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 5; i++) {
             String tmp = "";
-            for (int j = 0; j < 6 - i; j++) {
+            for (int j = 0; j < 5 - i; j++) {
                 tmp += " ";
             }
-            for (int j = 0; j < i; j++) {
+            for (int j = 0; j <= i; j++) {
                 tmp += a + " ";
                 a++;
             }

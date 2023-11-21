@@ -2,7 +2,7 @@ package src;
 
 public class WhileLoops {
     public static void main(String[] args) {
-        while9(1123, 33);
+        while17("Hello java");
     }
 
 
@@ -145,16 +145,57 @@ public class WhileLoops {
     /*
      **while14. Write Java program to Implement infinite loop using do-while loop**
      */
+    public static void while14(){
+        do {
+        }
+        while (true);
+    }
 
     /*
      **while15. Write Java program to Implement infinite loop using while loop**
      */
+    public static void while15(){
+        while (true){
+        }
+    }
 
     /*
      **while16. Write Java program to Implement infinite loop using for loop**
      */
+    public static void while16(){
+        for (; true;) {
+        }
+    }
 
     /*
      **while17. Write Java program to Print string in hexadecimal format**
      */
+    public static void while17(String input){
+        int pos = 0;
+        String res = "";
+        while (pos < input.length()){
+            int ch = input.charAt(pos);
+            String hex = "";
+            while (ch > 0){
+                int tmp = ch % 16;
+                if (tmp < 10)
+                    hex = tmp + hex;
+                else
+                    hex = switch (tmp){
+                    case 10 -> 'A';
+                    case 11 -> 'B';
+                    case 12 -> 'C';
+                    case 13 -> 'D';
+                    case 14 -> 'E';
+                    case 15 -> 'F';
+                        default -> '?';
+                    } + hex;
+                ch /= 16;
+
+            }
+            pos++;
+            res += hex;
+        }
+        System.out.println(res);
+    }
 }
