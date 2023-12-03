@@ -40,7 +40,7 @@ public class Recursion {
     находящую значение N-й степени числа X по формулам:
     X^0 = 1, X^N = (X^N/2)^2 при четных N > 0,
     X^N = X·X^N−1 при нечетных N > 0,
-    X^N = 1/(X^−N) при N < 0
+    X^-N = 1/(X^N) при N < 0
             (X != 0 — вещественное число, N — целое; в формуле для четных N должна использоваться операция целочисленного деления).
     С помощью этой функции найти значения X^N для данного X при пяти данных значениях N.
 */
@@ -48,7 +48,7 @@ public class Recursion {
     public static double recur3(double num, int pow){
         if (pow == 0)
             return 1;
-        return pow > 0 ? recur3(num, pow - 1) * num : recur3(num, pow + 1) / num;
+        return pow > 0 ? recur3(num, pow - 1) * num : 1 / recur3(num, pow);
 
     }
 
@@ -62,6 +62,19 @@ public class Recursion {
         else
             return recur3_1(num , pow - 1) * num;
 
+    }
+
+    public static double recur_s(double num, int pow) {
+        if (pow == 0)
+            return 1;
+        if (pow < 0)
+            return recur3_1(num, pow + 1) / num;
+        if(pow % 2 == 0) {
+            double result = recur_s(num, pow / 2);
+            return result * result;
+        }
+        else
+            return recur3_1(num , pow - 1) * num;
     }
 
 /*

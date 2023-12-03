@@ -54,10 +54,12 @@ public class CinemaProject {
         if (row > places.length || seat > places[0].length || row <= 0 || seat <= 0) {
             System.err.println("SUCH SEAT DOESN'T EXIST!!!");
             buyPlace(places);
+            return;
         }
         if (places[row - 1][seat - 1].equals("B")) {
             System.err.println("THAT PLACE HAS BEEN BOOKED");
             buyPlace(places);
+            return;
         }
         places[row - 1][seat - 1] = "B";
         currentIncome += 10;
