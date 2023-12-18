@@ -1,4 +1,4 @@
-package src;
+package src.module1;
 
 public class OnlineArrays {
     public static void main(String[] args) {

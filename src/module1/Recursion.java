@@ -1,4 +1,4 @@
-package src;
+package src.module1;
 
 public class Recursion {
     public static int count = 0;
