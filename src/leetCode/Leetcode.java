@@ -1,11 +1,13 @@
 package src.leetCode;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Leetcode {
     public static void main(String[] args) {
 
-
+        String path = "/home/../foo/";
+        simplifyPath(path);
 
     }
 
@@ -118,6 +120,23 @@ Each time you can either climb 1 or 2 steps. In how many distinct ways can you c
             curr = prev + prevPrev;
         }
         return curr;
+    }
+
+    public static String simplifyPath(String path) {
+        String[] split = path.split("/");
+        String res = "";
+        for (String s : split) {
+            if (!s.isEmpty()){
+                res += "/" + s;
+            }
+            if (s.contains(".")){
+                res = "";
+            }
+        }
+        if (res.length() == 0)
+            return "/";
+        return res;
+
     }
 
 
