@@ -1,4 +1,6 @@
-package src.module2.task3;
+package src.module2.task3.ex6;
+
+import src.module2.task3.ex5.MyPoint;
 
 public class MyLine {
     private MyPoint begin;

@@ -1,4 +1,4 @@
-package src.module2.task3;
+package src.module2.task3.ex5;
 
 public class MyPoint {
     private int x = 0;

@@ -1,4 +1,6 @@
-package src.module2.task3;
+package src.module2.task3.ex7;
+
+import src.module2.task3.ex5.MyPoint;
 
 public class MyCircle {
     private MyPoint center = new MyPoint(0,0);
