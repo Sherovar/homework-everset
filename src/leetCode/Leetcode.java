@@ -1,14 +1,55 @@
 package src.leetCode;
 
-import java.util.Arrays;
-import java.util.Objects;
+import java.math.BigInteger;
+import java.util.*;
 
 public class Leetcode {
     public static void main(String[] args) {
 
-        String path = "/home/../foo/";
-        simplifyPath(path);
 
+
+    }
+
+
+
+
+    public List<Integer> findSubstring(String s, String[] words) {
+        HashSet<String> strings = new HashSet<>();
+        for (int i = 0; i < words.length; i++) {
+            String tmp = "";
+            for (int i1 = 0; i1 < words.length; i1++) {
+                tmp += words[i1];
+            }
+        }
+
+        return null;
+    }
+
+
+/*
+https://leetcode.com/problems/multiply-strings/description/
+* Given two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string.
+
+Note: You must not use any built-in BigInteger library or convert the inputs to integer directly.
+
+num1 and num2 consist of digits only.
+Both num1 and num2 do not contain any leading zero, except the number 0 itself.
+* */
+    public static String multiply(String num1, String num2) {
+        BigInteger numInt1 = new BigInteger(String.valueOf(0));
+        for (int i = 0; i < num1.length(); i++) {
+            int tmpNum = num1.charAt(i) - 48;
+            numInt1 = numInt1.multiply(BigInteger.valueOf(10));
+            numInt1 = numInt1.add(BigInteger.valueOf(tmpNum));
+        }
+        BigInteger numInt2 = new BigInteger(String.valueOf(0));
+        ;
+        for (int i = 0; i < num2.length(); i++) {
+            int tmpNum = num2.charAt(i) - 48;
+            numInt2 = numInt2.multiply(BigInteger.valueOf(10));
+            numInt2 = numInt2.add(BigInteger.valueOf(tmpNum));
+        }
+        return new BigInteger(String.valueOf(numInt1)).multiply(new BigInteger(String.valueOf(numInt2))).toString();
     }
 
     /*https://leetcode.com/problems/rotate-array/?envType=study-plan-v2&envId=top-interview-150
@@ -65,7 +106,7 @@ Return the maximum profit you can achieve from this transaction. If you cannot a
     }
 
     /*https://leetcode.com/problems/add-binary/description/
-    * Given two binary strings a and b, return their sum as a binary string.*/
+     * Given two binary strings a and b, return their sum as a binary string.*/
     public static String addBinary(String a, String b) {
         String res = "";
         int tmp = 0;
@@ -99,7 +140,7 @@ Return the maximum profit you can achieve from this transaction. If you cannot a
             posA--;
             posB--;
         }
-        if (tmp == 1){
+        if (tmp == 1) {
             res = '1' + res;
         }
 
@@ -126,10 +167,10 @@ Each time you can either climb 1 or 2 steps. In how many distinct ways can you c
         String[] split = path.split("/");
         String res = "";
         for (String s : split) {
-            if (!s.isEmpty()){
+            if (!s.isEmpty()) {
                 res += "/" + s;
             }
-            if (s.contains(".")){
+            if (s.contains(".")) {
                 res = "";
             }
         }
