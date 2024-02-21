@@ -1,14 +1,34 @@
 package src.randomTask;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class task1 {
     int t;
 
     public static void main(String[] args) {
-        int[] ints = {1, 2, 1, 1, 2 ,4 ,2};
-        System.out.println(getThirdMax(ints));
-        task1 task1;
+
+        Scanner scanner = new Scanner(System.in);
+
+
+
+    }
+
+    private static String reverseWordsInSentence(String sentence){
+        // Dobby is free -> ybboD si eerf
+        // English alphabet; Upper case and lower case; And spaces.
+        // length : [1; 2000]
+        // Only one space, that will distinct words.
+        String[] split = sentence.split(" ");
+        String result = "";
+        for (String s : split) {
+            for (int i = 0; i < s.length(); i++) {
+                result += s.charAt(s.length() - 1 - i);
+            }
+            result += " ";
+        }
+
+        return result;
     }
 
 
