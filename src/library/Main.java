@@ -35,6 +35,18 @@ public class Main {
             action = scanner.nextInt();
             switch (action){
                 case 1 -> System.out.println(libraryItems);
+                case 2 -> System.out.println(currentUser);
+                case 3 -> {
+                    if (currentUser.getRole().equals("librarian")){
+                        System.out.println(User.getUserList());
+                    } else if (currentUser.getRole().equals("member")){
+                    }
+                }
+                case 4 -> {
+                    if (currentUser.getRole().equals("librarian")){
+                        //delete/add user
+                    }
+                }
             }
 
         }

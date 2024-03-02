@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class User {
-    private static List<User> userList= new ArrayList<>();
+    private static List<User> userList = new ArrayList<>();
     static private int id = 1;
     private String login;
     private String password;
@@ -78,5 +78,19 @@ public abstract class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public static List<User> getUserList(){
+        return userList;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "login='" + login + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", role='" + role + '\'' +
+                '}';
     }
 }
